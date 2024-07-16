@@ -1,33 +1,49 @@
-"""Logging module for PySkel."""
+"""Logging module."""
 
 import logging
 import os
-from typing import Any, Optional
+from typing import Optional
 
 import pyfiglet
 
-log = logging.getLogger("pyskel")
+log = logging.getLogger("pytoda")
 
 TERMINAL_WIDTH = 60
 
 
-def setup_logging(config: Any) -> None:
+def setup_logging(
+    log_to_console: bool,
+    log_file: Optional[str] = None,
+    output_directory: Optional[str] = None,
+    sim_name: Optional[str] = None,
+) -> None:
     """Setup logging files and handlers.
 
     Args:
-        config (object): Munch type object containing all configs for current
-        run. Config options can be called via attribute-style access.
+        log_file (str): log file name (if None, no log file is written)
+        output_directory (str): path to output directory
+        sim_name (str): current simulation name
+        log_to_console (bool): option if log is written to console
     """
+
     # setup format for logging to file
     formatter = logging.Formatter(
         "%(asctime)s %(levelname)-8s %(message)s",
         datefmt="%d-%m %H:%M:%S",
     )
 
-    if config.general_config.log_file is not None:
+    if log_file is not None:
+        # create output folder structure
+        if output_directory is None or sim_name is None:
+            raise ValueError(
+                "Output directory and sim name must be provided for output!"
+            )
+        os.makedirs(os.path.join(output_directory, sim_name), exist_ok=True)
+
         logging_file_path = os.path.join(
-            config.general_config.output_directory,
-            config.general_config.log_file,
+            output_directory,
+            sim_name,
+            log_file,
         )
         file_handler = logging.FileHandler(logging_file_path, mode="w")
         file_handler.setFormatter(formatter)
@@ -35,19 +51,24 @@ def setup_logging(config: Any) -> None:
         log.addHandler(file_handler)
         log.setLevel(logging.DEBUG)
 
-    if config.general_config.log_to_console:
+    if log_to_console:
         stream_handler = logging.StreamHandler()
         stream_handler.setFormatter(formatter)
         log.addHandler(stream_handler)
         log.setLevel(logging.DEBUG)
 
 
-def print_header() -> None:
-    """Print header for PySkel."""
+def print_header(title: str, description: str) -> None:
+    """Print header with title and description.
+
+    Args:
+        title (str): Title of program.
+        description (str): Description of program.
+    """
     print_centered_multiline_block(
-        pyfiglet.figlet_format("PySkel", font="slant"), TERMINAL_WIDTH
+        pyfiglet.figlet_format(title, font="slant"), TERMINAL_WIDTH
     )
-    print_centered_multiline_block("General Python Skeleton", TERMINAL_WIDTH)
+    print_centered_multiline_block(description, TERMINAL_WIDTH)
 
 
 def print_centered_multiline_block(string: str, output_width: int) -> None:

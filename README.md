@@ -1,27 +1,22 @@
 <h1 align="center">
-  PySkel 🐍🩻
+  PyToDa 🐍🩻
 </h1>
 
 <div align="center">
 
-[![Pipeline](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml)
-[![Documentation](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_documentation.yml/badge.svg)](https://davidrudlstorfer.github.io/pyskel/)
-[![Coverage badge](https://github.com/davidrudlstorfer/pyskel/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pyskel/tree/python-coverage-comment-action-data)
+[![Pipeline](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_pipeline.yml)
+[![Documentation](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_documentation.yml/badge.svg)](https://davidrudlstorfer.github.io/pytoda/)
+[![Coverage badge](https://github.com/davidrudlstorfer/pytoda/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pytoda/tree/python-coverage-comment-action-data)
 
 </div>
 
-PySkel is a quick-start Python repository to act as a skeleton for various projects which includes the following amenities:
+PyToDa provides Python Tools for the daily usage including:
 
-- [PyTest](https://docs.pytest.org/) testing framework including an enforced minimum coverage check
-- Automated [Github CI/CD](https://resources.github.com/devops/ci-cd/)
-- Exhaustive [Pre-Commit](https://pre-commit.com) framework to automatically check code formatting and code quality
-- Automatically generated [Documentation](https://pdoc.dev) based on the included Python docstrings
-- Pre-defined framework to gather global settings (see [`main_example_config.yaml`](./src/pyskel/main_example_config.yaml)) and execute a specific workflow
-- Adjusted global logger with optional output to the commandline and/or log file
+- TBD
 
 ## Installation
 
-For a quick and easy start an Anaconda/Miniconda environment is highly recommended. Other ways to install PySkel are possible but here the installation procedure is explained based on a conda install. After installing Anaconda/Miniconda
+For a quick and easy start an Anaconda/Miniconda environment is highly recommended. Other ways to install PyToDa are possible but here the installation procedure is explained based on a conda install. After installing Anaconda/Miniconda
 execute the following steps:
 
 - Create a new Anaconda environment based on the [`environment.yml`](./environment.yml) file:
@@ -31,7 +26,7 @@ conda env create -f environment.yml
 
 - Activate your newly created environment:
 ```
-conda activate pyskel
+conda activate pytoda
 ```
 - All necessary third party libraries can be installed using:
 ```
@@ -46,16 +41,16 @@ Now you are up and running 🎉
 
 ## Execution
 
-To execute PySkel either run
+To execute PyToDa either run
 
 ```
-pyskel
+pytoda
 ````
 
-to execute PySkel with the provided exemplary config or use
+to execute PyToDa with the provided exemplary config or use
 
 ```
-pyskel --config_file_path ../path/to/config.yaml
+pytoda --config_file_path ../path/to/config.yaml
 ````
 
 to utilize your own externally provided config file. Therein, all necessary configurations can be found.

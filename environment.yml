@@ -1,4 +1,4 @@
-name: pyskel
+name: pytoda
 channels:
   - conda-forge
   - nodefaults

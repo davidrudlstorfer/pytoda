@@ -5,14 +5,14 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "PySkel"
+name = "PyToDa"
 version = "1.0"
 authors = [{ name = "David Rudlstorfer" }]
 maintainers = [{ name = "David Rudlstorfer" }]
-description = "A quick start Python skeleton with many amenities"
+description = "Python tools for the daily usage"
 readme = "README.md"
 license = {file = "LICENSE.md"}
-keywords = ["Skeleton", "Documentation", "CICD", "Testing", "Pre-Commit"]
+keywords = ["Python", "Tools"]
 classifiers = ["Programming Language :: Python :: 3.12"]
 
 requires-python = "==3.12.*"
@@ -20,13 +20,14 @@ dynamic = ["dependencies"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["pyskel", "utilities"]
+include = ["pytoda"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
 
 [project.scripts]
-pyskel = "pyskel.main:main"
+# !TODO
+pytoda = "pytoda.main:main"
 
 ## Tools
 

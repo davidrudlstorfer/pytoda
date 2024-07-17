@@ -6,9 +6,11 @@ from typing import Optional
 
 import pyfiglet
 
-log = logging.getLogger("pytoda")
-
 TERMINAL_WIDTH = 60
+
+# Define type of log for mypy check
+# https://github.com/python/mypy/issues/5732
+log: logging.Logger
 
 
 def setup_logging(
@@ -16,6 +18,7 @@ def setup_logging(
     log_file: Optional[str] = None,
     output_directory: Optional[str] = None,
     sim_name: Optional[str] = None,
+    logger_name: Optional[str] = "pytoda",
 ) -> None:
     """Setup logging files and handlers.
 
@@ -24,7 +27,12 @@ def setup_logging(
         output_directory (str): path to output directory
         sim_name (str): current simulation name
         log_to_console (bool): option if log is written to console
+        logger_name (str): global logger name for use in external repos
     """
+
+    # define logger name
+    global log
+    log = logging.getLogger(logger_name)
 
     # setup format for logging to file
     formatter = logging.Formatter(
@@ -84,7 +92,7 @@ def print_centered_multiline_block(string: str, output_width: int) -> None:
     if max_line_width % 2:
         output_width += 1
     for line in lines:
-        log.info(line.ljust(max_line_width).center(output_width))
+        log.info(line.ljust(max_line_width).center(output_width))  # noqa: F821
 
 
 def log_full_width(text: Optional[str] = None) -> None:
@@ -101,6 +109,6 @@ def log_full_width(text: Optional[str] = None) -> None:
         fill_width = int((TERMINAL_WIDTH - text_width) / 2) - 1
         out_str = "=" * fill_width + " " + text + " " + "=" * fill_width
 
-    log.info("")
-    log.info(out_str)
-    log.info("")
+    log.info("")  # noqa: F821
+    log.info(out_str)  # noqa: F821
+    log.info("")  # noqa: F821

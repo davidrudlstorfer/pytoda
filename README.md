@@ -5,8 +5,8 @@
 | Name                       |    Stmts |     Miss |    Cover |   Missing |
 |--------------------------- | -------: | -------: | -------: | --------: |
 | src/pytoda/\_\_init\_\_.py |        0 |        0 |     100% |           |
-| src/pytoda/logger.py       |       42 |        0 |     100% |           |
-|                  **TOTAL** |   **42** |    **0** | **100%** |           |
+| src/pytoda/logger.py       |       43 |        0 |     100% |           |
+|                  **TOTAL** |   **43** |    **0** | **100%** |           |
 
 
 ## Setup coverage badge

@@ -25,6 +25,7 @@ def test_logger_file(tmp_path: Path):
         log_file="test.log",
         output_directory=str(tmp_path),
         sim_name="test_sim",
+        logger_name="pytoda",
     )
     log.info("This is a test log message.")
 
@@ -42,6 +43,7 @@ def test_logger_file(tmp_path: Path):
             log_file="test.log",
             output_directory=None,
             sim_name=None,
+            logger_name="pytoda",
         )
     except ValueError as error:
         assert str(error) == (
@@ -61,6 +63,7 @@ def test_logger_console(caplog: Any):
         log_file=None,
         output_directory=None,
         sim_name=None,
+        logger_name="pytoda",
     )
 
     log.propagate = True
@@ -86,6 +89,7 @@ def test_logger_print_header(tmp_path: Path):
         log_file="test.log",
         output_directory=str(tmp_path),
         sim_name="test_sim",
+        logger_name="pytoda",
     )
     print_header("PyGeBeGe", "A Python Generator for Beam Geometries")
     log.info("This is a test log message.")
@@ -116,6 +120,7 @@ def test_logger_log_full_width(tmp_path: Path):
         log_file="test.log",
         output_directory=str(tmp_path),
         sim_name="test_sim",
+        logger_name="pytoda",
     )
     log_full_width("THIS IS A TEST")
     log_full_width()

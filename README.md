@@ -1,5 +1,5 @@
 <h1 align="center">
-  PyToDa 🐍🩻
+  PyToDa 🐍🛠️
 </h1>
 
 <div align="center">
@@ -12,6 +12,7 @@
 
 PyToDa provides Python Tools for the daily usage including:
 
+- A 4C .dat input file formatter
 - TBD
 
 ## Installation
@@ -41,19 +42,7 @@ Now you are up and running 🎉
 
 ## Execution
 
-To execute PyToDa either run
-
-```
-pytoda
-````
-
-to execute PyToDa with the provided exemplary config or use
-
-```
-pytoda --config_file_path ../path/to/config.yaml
-````
-
-to utilize your own externally provided config file. Therein, all necessary configurations can be found.
+TBD
 
 ### Run testing framework and create coverage report
 

@@ -27,7 +27,7 @@ dependencies = { file = ["requirements.txt"] }
 
 [project.scripts]
 # !TODO
-pytoda = "pytoda.main:main"
+format_dat = "pytoda.dat_file_formatter:main"
 
 ## Tools
 

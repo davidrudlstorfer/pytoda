@@ -4,6 +4,8 @@
 #
 #    pip-compile --all-extras --output-file=requirements.txt requirements.in
 #
+appdirs==1.4.4
+    # via pint
 cfgv==3.4.0
     # via pre-commit
 coverage[toml]==7.5.3
@@ -12,6 +14,10 @@ distlib==0.3.8
     # via virtualenv
 filelock==3.15.3
     # via virtualenv
+flexcache==0.3
+    # via pint
+flexparser==0.3.1
+    # via pint
 identify==2.5.36
     # via pre-commit
 iniconfig==2.0.0
@@ -40,6 +46,8 @@ packaging==24.1
     # via pytest
 pdoc3==0.10.0
     # via -r requirements.in
+pint==0.24.3
+    # via -r requirements.in
 platformdirs==4.2.2
     # via virtualenv
 pluggy==1.5.0
@@ -56,5 +64,10 @@ pyyaml==6.0.1
     # via
     #   -r requirements.in
     #   pre-commit
+typing-extensions==4.12.2
+    # via
+    #   flexcache
+    #   flexparser
+    #   pint
 virtualenv==20.26.2
     # via pre-commit

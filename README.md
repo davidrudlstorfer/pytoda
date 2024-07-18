@@ -13,7 +13,7 @@
 PyToDa provides Python Tools for the daily usage including:
 
 - A 4C .dat input file formatter
-- TBD
+- An arbitrary unit converter
 
 ## Installation
 

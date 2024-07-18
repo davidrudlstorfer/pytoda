@@ -8,6 +8,7 @@ numpy==1.26.4
 isort
 munch
 pdoc3
+pint
 pre-commit
 pyfiglet
 pytest-cov

@@ -7,8 +7,8 @@
 | src/pytoda/\_\_init\_\_.py         |        0 |        0 |    100% |           |
 | src/pytoda/dat\_file\_formatter.py |       83 |        1 |     99% |       238 |
 | src/pytoda/logger.py               |       43 |        0 |    100% |           |
-| src/pytoda/unit\_converter.py      |       43 |        0 |    100% |           |
-|                          **TOTAL** |  **169** |    **1** | **99%** |           |
+| src/pytoda/unit\_converter.py      |       50 |        0 |    100% |           |
+|                          **TOTAL** |  **176** |    **1** | **99%** |           |
 
 
 ## Setup coverage badge

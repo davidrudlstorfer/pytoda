@@ -10,89 +10,89 @@ from pytoda.logger import log_full_width, print_header, setup_logging
 
 log = logging.getLogger("pytoda")
 
-# Define type of ureg for mypy check
-# https://github.com/python/mypy/issues/5732
-ureg: pint.UnitRegistry
 
+class Converter:
+    """Converter class."""
 
-def define_target_unit_system(
-    unit_length: str,
-    unit_weight: str,
-    unit_time: str,
-    enable_logging: bool = True,
-) -> pint.UnitRegistry:
-    """Define the global target unit system.
+    def __init__(
+        self,
+        unit_length: str,
+        unit_weight: str,
+        unit_time: str,
+        log: logging.Logger,
+        enable_logging: bool = True,
+    ):
 
-    Args:
-        unit_length (str): Target unit for length.
-        unit_weight (str): Target unit for weight.
-        unit_time (str): Target unit for time.
-        enable_logging (bool, optional): Enable logging of the target unit
-            system. Defaults to True.
+        self.unit_length = unit_length
+        self.unit_weight = unit_weight
+        self.unit_time = unit_time
+        self.log = log
+        self.enable_logging = enable_logging
 
-    Returns:
-        pint.UnitRegistry: pint unit registry system
-    """
+    def setup_target_unit_system(self) -> pint.UnitRegistry:
+        """Setup the global target unit system.
 
-    global ureg
-    ureg = pint.UnitRegistry()
+        Returns:
+            pint.UnitRegistry: pint unit registry system
+        """
 
-    target_system = [
-        f"@system {unit_length}{unit_weight}{unit_time} using international",
-        f"{unit_length}",
-        f"{unit_weight}",
-        f"{unit_time}",
-        "@end",
-    ]
-    ureg.System.from_lines(target_system, ureg.get_root_units)
-    ureg.default_system = f"{unit_length}{unit_weight}{unit_time}"
+        ureg = pint.UnitRegistry()
 
-    if enable_logging:
-        log.info("Target unit system:")
-        log.info("")
-        log.info(f"     Length: {unit_length.rjust(10)}")
-        log.info(f"     Weight: {unit_weight.rjust(10)}")
-        log.info(f"     Time: {unit_time.rjust(12)}")
-        log.info("")
-
-    return ureg
-
-
-def convert(
-    quantity: pint.Quantity,
-    title: Optional[str] = None,
-    target_unit: Optional[pint.Unit] = None,
-    enable_logging: bool = True,
-) -> pint.Quantity:
-    """Convert quantity to either the global target unit system or a specific
-    target unit system. Optionally log results.
-
-    Args:
-        quantity (pint.Quantity): Quantity which gets converted.
-        title (str): Name of the quantity to be logged.
-        target_unit (Optional[pint.Unit], optional): Target unit if no
-            conversion to the global target unit system is wanted.
-        enable_logging (bool, optional): Enable logging of the conversion.
-            Defaults to True.
-
-    Returns:
-        pint.Quantity: Converted quantity.
-    """
-
-    if target_unit:
-        converted_quantity = quantity.to(target_unit)
-    else:
-        converted_quantity = quantity.to_base_units()
-
-    if enable_logging:
-        log.info(f"Converting {title or ""} ...")
-        log.info(f"     Input quantity: {str(quantity).rjust(37)}")
-        log.info(
-            f"     Converted quantity: {f'{converted_quantity:.5e}'.rjust(33)}"
+        target_system = [
+            f"@system {self.unit_length}{self.unit_weight}{self.unit_time} using international",  # noqa: 501
+            f"{self.unit_length}",
+            f"{self.unit_weight}",
+            f"{self.unit_time}",
+            "@end",
+        ]
+        ureg.System.from_lines(target_system, ureg.get_root_units)
+        ureg.default_system = (
+            f"{self.unit_length}{self.unit_weight}{self.unit_time}"
         )
-        log.info("")
 
-    return converted_quantity
+        if self.enable_logging:
+            self.log.info("Target unit system:")
+            self.log.info("")
+            self.log.info(f"     Length: {self.unit_length.rjust(10)}")
+            self.log.info(f"     Weight: {self.unit_weight.rjust(10)}")
+            self.log.info(f"     Time: {self.unit_time.rjust(12)}")
+            self.log.info("")
+
+        return ureg
+
+    def convert(
+        self,
+        quantity: pint.Quantity,
+        title: Optional[str] = None,
+        target_unit: Optional[pint.Unit] = None,
+    ) -> pint.Quantity:
+        """Convert quantity to either the global target unit system or a
+        specific target unit system. Optionally log results.
+
+        Args:
+            quantity (pint.Quantity): Quantity which gets converted.
+            title (str): Name of the quantity to be logged.
+            target_unit (Optional[pint.Unit], optional): Target unit if no
+                conversion to the global target unit system is wanted.
+
+        Returns:
+            pint.Quantity: Converted quantity.
+        """
+
+        if target_unit:
+            converted_quantity = quantity.to(target_unit)
+        else:
+            converted_quantity = quantity.to_base_units()
+
+        if self.enable_logging:
+            self.log.info(f"Converting {title or ""} ...")
+            self.log.info(f"     Input quantity: {str(quantity).rjust(37)}")
+            self.log.info(
+                f"     Converted quantity: {f'{converted_quantity:.5e}'.rjust(33)}"  # noqa: 501
+            )
+            self.log.info("")
+
+        return converted_quantity
 
 
 def main() -> None:
@@ -147,12 +147,17 @@ def main() -> None:
 
     log_full_width("Unit conversion started")
 
-    ureg = define_target_unit_system(
+    converter = Converter(
         unit_length=args.unit_length,
         unit_weight=args.unit_weight,
         unit_time=args.unit_time,
+        log=log,
+        enable_logging=True,
     )
-    convert(ureg.Quantity(args.quantity))
+
+    ureg = converter.setup_target_unit_system()
+
+    converter.convert(ureg.Quantity(args.quantity))
 
     log_full_width("Unit conversion finished")
 

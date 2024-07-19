@@ -26,6 +26,7 @@ jobs:
           name: documentation
           path: docs/src
   deploy:
+    name: Deploy documentation
     permissions:
       pages: write
       id-token: write

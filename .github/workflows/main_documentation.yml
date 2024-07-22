@@ -19,12 +19,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
       - name: Generate documentation
-        run: pdoc --html --output-dir docs src/
+        run: pdoc --html --output-dir docs src/pytoda
       - name: Upload documentation artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: documentation
-          path: docs/src
+          path: docs/pytoda
   deploy:
     name: Deploy documentation
     permissions:

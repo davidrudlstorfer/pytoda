@@ -98,7 +98,7 @@ pytest
 To locally create the documentation from the provided docstrings simply run
 
 ```
-pdoc --html --output-dir docs src/
+pdoc --html --output-dir docs src/pytoda
 ```
 
 ## Dependency Management

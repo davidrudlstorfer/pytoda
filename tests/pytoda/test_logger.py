@@ -68,7 +68,7 @@ def test_logger_console(caplog: Any):
 
     log.propagate = True
 
-    with caplog.at_level(logging.DEBUG, logger="pygebege"):
+    with caplog.at_level(logging.DEBUG, logger="pytoda"):
         log.info("This is a test log message.")
 
     assert "This is a test log message." in caplog.text
@@ -91,7 +91,7 @@ def test_logger_print_header(tmp_path: Path):
         sim_name="test_sim",
         logger_name="pytoda",
     )
-    print_header("PyGeBeGe", "A Python Generator for Beam Geometries")
+    print_header("PyToDa", "A dummy log line")
     log.info("This is a test log message.")
 
     log_file = tmp_path / "test_sim" / "test.log"
@@ -100,9 +100,9 @@ def test_logger_print_header(tmp_path: Path):
     with open(log_file, "r") as f:
         log_content = f.read()
         assert (
-            "/ ____/ /_/ / /_/ /  __/ /_/ /  __/ /_/ /  __/" in log_content
+            "/ ____/ /_/ // / / /_/ / /_/ / /_/ /" in log_content
         )  # exemplary line in log
-        assert "A Python Generator for Beam Geometries" in log_content
+        assert "A dummy log line" in log_content
 
 
 def test_logger_log_full_width(tmp_path: Path):

@@ -6,9 +6,9 @@
 |----------------------------------- | -------: | -------: | ------: | --------: |
 | src/pytoda/\_\_init\_\_.py         |        0 |        0 |    100% |           |
 | src/pytoda/dat\_file\_formatter.py |       83 |        1 |     99% |       238 |
-| src/pytoda/logger.py               |       43 |        0 |    100% |           |
+| src/pytoda/logger.py               |       43 |        1 |     98% |        93 |
 | src/pytoda/unit\_converter.py      |       50 |        0 |    100% |           |
-|                          **TOTAL** |  **176** |    **1** | **99%** |           |
+|                          **TOTAL** |  **176** |    **2** | **99%** |           |
 
 
 ## Setup coverage badge

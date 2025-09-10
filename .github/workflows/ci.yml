@@ -1,4 +1,4 @@
-name: PyToDa Github Workflow
+name: CI Workflow
 
 on:
   push:
@@ -29,8 +29,8 @@ jobs:
       - uses: ./.github/actions/run-tests
 
   create_coverage_badge:
-    name: Create coverage badge and comment
     if: github.ref == 'refs/heads/main'
+    name: Create coverage badge and comment
     runs-on: ubuntu-latest
     needs: tests
     permissions:
@@ -52,6 +52,7 @@ jobs:
         id: coverage_comment
         uses: py-cov-action/python-coverage-comment-action@v3.37
         with:
+          MINIMUM_GREEN: 90
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Store coverage badge and comment in separate branch
@@ -72,8 +73,9 @@ jobs:
       - uses: ./.github/actions/build-docs
 
   deploy_docs:
-    name: Deploy documentation
     if: github.ref == 'refs/heads/main'
+
+    name: Deploy documentation
     permissions:
       pages: write
       id-token: write

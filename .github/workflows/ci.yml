@@ -13,7 +13,7 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup-env
       - uses: ./.github/actions/run-precommit
 
@@ -24,7 +24,7 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup-env
       - uses: ./.github/actions/run-tests
 
@@ -41,7 +41,7 @@ jobs:
         shell: bash -el {0}
     steps:
 
-      - uses: actions/checkout@v4 # necessary for the job to successfully create the badge
+      - uses: actions/checkout@v5 # necessary for the job to successfully create the badge
 
       - name: Download coverage
         uses: actions/download-artifact@v5
@@ -68,7 +68,7 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup-env
       - uses: ./.github/actions/build-docs
 

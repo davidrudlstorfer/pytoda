@@ -8,7 +8,7 @@ runs:
       run: pdoc --html --output-dir docs src/pytoda
 
     - name: Upload documentation artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         name: documentation
         path: docs/pytoda

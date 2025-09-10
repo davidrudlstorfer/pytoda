@@ -33,6 +33,10 @@ convert_unit = "pytoda.unit_converter:main"
 
 ## Tools
 
+# necessary for the coverage badge
+[tool.coverage.run]
+relative_files = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/"

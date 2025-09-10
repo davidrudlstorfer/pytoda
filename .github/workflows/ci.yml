@@ -40,9 +40,17 @@ jobs:
       run:
         shell: bash -el {0}
     steps:
+
+      - uses: actions/checkout@v4 # necessary for the job to successfully create the badge
+
+      - name: Download coverage
+        uses: actions/download-artifact@v5
+        with:
+          name: coverage
+
       - name: Create coverage badge
         id: coverage_comment
-        uses: py-cov-action/python-coverage-comment-action@v3
+        uses: py-cov-action/python-coverage-comment-action@v3.37
         with:
           GITHUB_TOKEN: ${{ github.token }}
 

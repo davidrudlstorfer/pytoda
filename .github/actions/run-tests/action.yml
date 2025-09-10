@@ -9,7 +9,7 @@ runs:
         pytest
 
     - name: Upload HTML coverage report
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         name: coverage_report
         path: htmlcov/

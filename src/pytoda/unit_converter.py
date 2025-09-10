@@ -99,7 +99,7 @@ def main() -> None:
     """Parse arguments and call convert quantities."""
 
     parser = argparse.ArgumentParser(
-        description=("Utility to format 4C input .dat files.")
+        description=("Utility to to convert quantities into new unit systems.")
     )
     parser.add_argument(
         "--unit_length",

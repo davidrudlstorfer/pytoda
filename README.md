@@ -12,7 +12,6 @@
 
 PyToDa (**Py**thon **To**ols for the **Da**ily Usage) provides useful tools for the day to day usage with the multi-physics simulation framework [4C](https://www.4c-multiphysics.org) and is based on [PySkel](https://github.com/davidrudlstorfer/pyskel). Currently the following tools are available:
 
-- A 4C .dat input file formatter which beautifully formats the input file so all columns and numbers are aligned for easier readability.
 - An arbitrary unit converter which can be very easily be included in other frameworks.
 - A logging framework which can be easily included into other frameworks.
 
@@ -20,7 +19,6 @@ The remaining parts of the readme are structured as follows:
 
 - [Installation](#installation)
 - [Execution](#execution)
-  - [.dat input file formatter](#dat-input-file-formatter)
   - [Unit converter](#unit-converter)
   - [Logger](#logger)
   - [Run testing framework and create coverage report](#run-testing-framework-and-create-coverage-report)
@@ -60,16 +58,6 @@ Now you are up and running 🎉
 ## Execution
 
 The following brief tutorials highlight how each tool can be used:
-
-### .dat input file formatter
-
-Simply call the .dat input file formatter with
-
-```
-format_dat --dat_file_path ../path/to/datfile.dat --output_file_path ../path/to/final/datfile.dat --format_sections NODE COORDS
-```
-
-If the output file path coincides with the input file path the original file simply gets overwritten. Additionally, you need to provide the sections which will be formatted.
 
 ### Unit converter
 

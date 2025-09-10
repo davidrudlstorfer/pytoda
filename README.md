@@ -43,17 +43,16 @@ conda env create -f environment.yml
 conda activate pytoda
 ```
 
-- Install all PyToDa requirements with:
+- Install all PyToDa requirements (latest versions) with:
 ```
 pip install -e .
 ```
-
-- Finally, install the pre-commit hook with:
+or install the pinned versions with
 ```
-pre-commit install
+pip install -e ."[safe]"
 ```
 
-Now you are up and running 🎉
+- Now you are up and running 🎉
 
 ## Execution
 
@@ -67,7 +66,7 @@ The unit converter can be called with
 convert_unit --unit_length "m" --unit_weight "g" --unit_time "s" --quantity "1 bar"
 ```
 
-by providing the base units for the target unit system. Finally, the provided quantity will be converted into the taret unit system.
+by providing the base units for the target unit system. Finally, the provided quantity will be converted into the target unit system.
 
 ### Logger
 

@@ -6,7 +6,7 @@
 
 [![CI Workflow](https://github.com/davidrudlstorfer/pytoda/actions/workflows/ci.yml/badge.svg)](https://github.com/davidrudlstorfer/pytoda/actions/workflows/ci.yml)
 [![Documentation](https://raw.githubusercontent.com/davidrudlstorfer/pytoda/refs/heads/main/assets/badges/documentation.svg)](https://davidrudlstorfer.github.io/pytoda/)
-[![Coverage badge](https://github.com/davidrudlstorfer/pytoda/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pytoda/tree/python-coverage-comment-action-data)
+[![Coverage badge](https://github.com/davidrudlstorfer/pytoda/raw/python-coverage-comment-action-data/badge.svg)](https://htmlpreview.github.io/?https://github.com/davidrudlstorfer/pytoda/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
 </div>
 

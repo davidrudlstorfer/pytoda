@@ -4,8 +4,8 @@
 
 <div align="center">
 
-[![Pipeline](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_pipeline.yml)
-[![Documentation](https://github.com/davidrudlstorfer/pytoda/actions/workflows/main_documentation.yml/badge.svg)](https://davidrudlstorfer.github.io/pytoda/)
+[![CI Workflow](https://github.com/davidrudlstorfer/pytoda/actions/workflows/ci.yml/badge.svg)](https://github.com/davidrudlstorfer/pytoda/actions/workflows/ci.yml)
+[![Documentation](https://raw.githubusercontent.com/davidrudlstorfer/pytoda/refs/heads/main/assets/badges/documentation.svg)](https://davidrudlstorfer.github.io/pytoda/)
 [![Coverage badge](https://github.com/davidrudlstorfer/pytoda/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pytoda/tree/python-coverage-comment-action-data)
 
 </div>

@@ -2,13 +2,12 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/davidrudlstorfer/pytoda/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                               |    Stmts |     Miss |   Cover |   Missing |
-|----------------------------------- | -------: | -------: | ------: | --------: |
-| src/pytoda/\_\_init\_\_.py         |        0 |        0 |    100% |           |
-| src/pytoda/dat\_file\_formatter.py |       83 |        1 |     99% |       238 |
-| src/pytoda/logger.py               |       43 |        1 |     98% |        93 |
-| src/pytoda/unit\_converter.py      |       50 |        0 |    100% |           |
-|                          **TOTAL** |  **176** |    **2** | **99%** |           |
+| Name                          |    Stmts |     Miss |   Cover |   Missing |
+|------------------------------ | -------: | -------: | ------: | --------: |
+| src/pytoda/\_\_init\_\_.py    |        0 |        0 |    100% |           |
+| src/pytoda/logger.py          |       43 |        1 |     98% |        93 |
+| src/pytoda/unit\_converter.py |       50 |        0 |    100% |           |
+|                     **TOTAL** |   **93** |    **1** | **99%** |           |
 
 
 ## Setup coverage badge

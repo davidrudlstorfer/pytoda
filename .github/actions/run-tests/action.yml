@@ -1,0 +1,15 @@
+name: "Run tests"
+description: "Run pytest with coverage and generate HTML report"
+runs:
+  using: "composite"
+  steps:
+    - name: Run tests with coverage
+      shell: bash -el {0}
+      run: |
+        pytest
+
+    - name: Upload HTML coverage report
+      uses: actions/upload-pages-artifact@v3
+      with:
+        name: coverage
+        path: htmlcov/

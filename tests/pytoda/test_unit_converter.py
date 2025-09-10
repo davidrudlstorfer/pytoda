@@ -88,7 +88,6 @@ def test_unit_converter_main(caplog: Any):
             unit_length="nm", unit_weight="g", unit_time="ms", quantity="1 bar"
         ),
     ):
-
         log.propagate = True
 
         with caplog.at_level(logging.DEBUG, logger="pytoda"):
@@ -98,12 +97,6 @@ def test_unit_converter_main(caplog: Any):
         assert "Length:         nm" in caplog.text
         assert "Weight:          g" in caplog.text
         assert "Time:           ms" in caplog.text
-        assert (
-            "Input quantity:                                 1 bar"
-            in caplog.text
-        )
-        assert (
-            "Converted quantity:      1.00000e-07 g / ms ** 2 / nm"
-            in caplog.text
-        )
+        assert "Input quantity:                                 1 bar" in caplog.text
+        assert "Converted quantity:      1.00000e-07 g / ms ** 2 / nm" in caplog.text
         assert "Unit conversion finished" in caplog.text

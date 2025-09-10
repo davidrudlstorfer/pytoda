@@ -30,23 +30,6 @@ convert_unit = "pytoda.unit_converter:main"
 
 ## Tools
 
-[tool.bandit]
-exclude_dirs = [
-    ".git",
-    "__pycache__",
-]
-
-[tool.black]
-line-length = 79
-
-[tool.coverage.run]
-relative_files = true
-
-[tool.isort]
-profile = "black"
-line_length = 79
-src_paths = ["."]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/ --cov-append"
+addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/"

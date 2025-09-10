@@ -22,7 +22,6 @@ class Converter:
         log: logging.Logger,
         enable_logging: bool = True,
     ):
-
         self.unit_length = unit_length
         self.unit_weight = unit_weight
         self.unit_time = unit_time
@@ -46,9 +45,7 @@ class Converter:
             "@end",
         ]
         ureg.System.from_lines(target_system, ureg.get_root_units)
-        ureg.default_system = (
-            f"{self.unit_length}{self.unit_weight}{self.unit_time}"
-        )
+        ureg.default_system = f"{self.unit_length}{self.unit_weight}{self.unit_time}"
 
         if self.enable_logging:
             self.log.info("Target unit system:")
@@ -85,7 +82,7 @@ class Converter:
             converted_quantity = quantity.to_base_units()
 
         if self.enable_logging:
-            self.log.info(f"Converting {title or ""} ...")
+            self.log.info(f"Converting {title or ''} ...")
             self.log.info(f"     Input quantity: {str(quantity).rjust(37)}")
             self.log.info(
                 f"     Converted quantity: {f'{converted_quantity:.5e}'.rjust(33)}"  # noqa: 501
@@ -163,6 +160,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":  # pragma: no cover
-
     main()
     exit(0)

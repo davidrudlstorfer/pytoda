@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - python==3.12
+  - python==3.13
   # for performance improvements the following packages are installed via conda
   - numba==0.59.1
   - numpy==1.26.4

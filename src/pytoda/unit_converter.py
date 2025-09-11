@@ -32,7 +32,7 @@ class Converter:
         """Setup the global target unit system.
 
         Returns:
-            pint.UnitRegistry: pint unit registry system
+            Pint unit registry system
         """
 
         ureg = pint.UnitRegistry()
@@ -67,13 +67,13 @@ class Converter:
         specific target unit system. Optionally log results.
 
         Args:
-            quantity (pint.Quantity): Quantity which gets converted.
-            title (str): Name of the quantity to be logged.
-            target_unit (Optional[pint.Unit], optional): Target unit if no
-                conversion to the global target unit system is wanted.
+            quantity: Quantity which gets converted.
+            title: Name of the quantity to be logged.
+            target_unit: Target unit if no conversion to the global target
+                unit system is wanted.
 
         Returns:
-            pint.Quantity: Converted quantity.
+            Converted quantity.
         """
 
         if target_unit:

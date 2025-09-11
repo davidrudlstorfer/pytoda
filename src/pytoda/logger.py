@@ -23,11 +23,11 @@ def setup_logging(
     """Setup logging files and handlers.
 
     Args:
-        log_file (str): log file name (if None, no log file is written)
-        output_directory (str): path to output directory
-        sim_name (str): current simulation name
-        log_to_console (bool): option if log is written to console
-        logger_name (str): global logger name for use in external repos
+        log_file: log file name (if None, no log file is written)
+        output_directory: path to output directory
+        sim_name: current simulation name
+        log_to_console: option if log is written to console
+        logger_name: global logger name for use in external repos
     """
 
     # define logger name
@@ -70,8 +70,8 @@ def print_header(title: str, description: str) -> None:
     """Print header with title and description.
 
     Args:
-        title (str): Title of program.
-        description (str): Description of program.
+        title: Title of program.
+        description: Description of program.
     """
     print_centered_multiline_block(
         pyfiglet.figlet_format(title, font="slant"), TERMINAL_WIDTH
@@ -84,8 +84,8 @@ def print_centered_multiline_block(string: str, output_width: int) -> None:
     test the docstring formatter.
 
     Args:
-        string (str): String to be printed
-        output_width (int): Terminal output width
+        string: String to be printed
+        output_width: Terminal output width
     """
     lines = string.split("\n")
     max_line_width = max(len(line) for line in lines)
@@ -99,7 +99,7 @@ def log_full_width(text: Optional[str] = None) -> None:
     """Log full width text/headline.
 
     Args:
-        text (Optional[str], optional): Text to be logged. Defaults to None and
+        text: Text to be logged. Defaults to None and
         only prints new section.
     """
     if text is None:

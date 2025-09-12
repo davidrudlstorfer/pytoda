@@ -5,10 +5,10 @@ runs:
   steps:
     - name: Generate HTML documentation
       shell: bash -el {0}
-      run: pdoc --html --output-dir docs src/pytoda
+      run: pdoc --docformat google --output-dir docs src/pytoda
 
     - name: Upload documentation artifact
       uses: actions/upload-pages-artifact@v4
       with:
         name: documentation
-        path: docs/pytoda
+        path: docs/

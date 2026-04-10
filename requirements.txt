@@ -6,25 +6,27 @@
 #
 cfgv==3.5.0
     # via pre-commit
-coverage[toml]==7.13.4
+coverage[toml]==7.13.5
     # via pytest-cov
 distlib==0.4.0
     # via virtualenv
-filelock==3.20.3
-    # via virtualenv
+filelock==3.25.2
+    # via
+    #   python-discovery
+    #   virtualenv
 flexcache==0.3
     # via pint
 flexparser==0.4
     # via pint
-identify==2.6.16
+identify==2.6.18
     # via pre-commit
 iniconfig==2.3.0
     # via pytest
 jinja2==3.1.6
     # via pdoc
-llvmlite==0.46.0
+llvmlite==0.47.0
     # via numba
-markdown2==2.5.4
+markdown2==2.5.5
     # via pdoc
 markupsafe==3.0.3
     # via
@@ -34,9 +36,9 @@ munch==4.0.0
     # via -r requirements.in
 nodeenv==1.10.0
     # via pre-commit
-numba==0.63.1
+numba==0.65.0
     # via -r requirements.in
-numpy==2.3.5
+numpy==2.4.4
     # via
     #   -r requirements.in
     #   numba
@@ -44,11 +46,12 @@ packaging==26.0
     # via pytest
 pdoc==16.0.0
     # via -r requirements.in
-pint==0.25.2
+pint==0.25.3
     # via -r requirements.in
-platformdirs==4.5.1
+platformdirs==4.9.6
     # via
     #   pint
+    #   python-discovery
     #   virtualenv
 pluggy==1.6.0
     # via
@@ -58,14 +61,16 @@ pre-commit==4.5.1
     # via -r requirements.in
 pyfiglet==1.0.4
     # via -r requirements.in
-pygments==2.19.2
+pygments==2.20.0
     # via
     #   pdoc
     #   pytest
-pytest==9.0.2
+pytest==9.0.3
     # via pytest-cov
-pytest-cov==7.0.0
+pytest-cov==7.1.0
     # via -r requirements.in
+python-discovery==1.2.2
+    # via virtualenv
 pyyaml==6.0.3
     # via
     #   -r requirements.in
@@ -75,5 +80,5 @@ typing-extensions==4.15.0
     #   flexcache
     #   flexparser
     #   pint
-virtualenv==20.36.1
+virtualenv==21.2.1
     # via pre-commit

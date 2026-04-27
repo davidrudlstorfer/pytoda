@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Set up Conda environment from environment.yml
-      uses: conda-incubator/setup-miniconda@v3
+      uses: conda-incubator/setup-miniconda@v4
       with:
         environment-file: environment.yml
         auto-update-conda: true

@@ -10,6 +10,8 @@ coverage[toml]==7.14.1
     # via pytest-cov
 distlib==0.4.3
     # via virtualenv
+exceptiongroup==1.3.1
+    # via pytest
 filelock==3.29.4
     # via
     #   python-discovery
@@ -38,7 +40,7 @@ nodeenv==1.10.0
     # via pre-commit
 numba==0.65.1
     # via -r requirements.in
-numpy==2.4.6
+numpy==2.2.6
     # via
     #   -r requirements.in
     #   numba
@@ -46,12 +48,11 @@ packaging==26.2
     # via pytest
 pdoc==16.0.0
     # via -r requirements.in
-pint==0.25.3
+pint==0.24.4
     # via -r requirements.in
 platformdirs==4.10.0
     # via
     #   pint
-    #   python-discovery
     #   virtualenv
 pluggy==1.6.0
     # via
@@ -69,16 +70,22 @@ pytest==9.1.0
     # via pytest-cov
 pytest-cov==7.1.0
     # via -r requirements.in
-python-discovery==1.4.2
+python-discovery==1.6.1
     # via virtualenv
 pyyaml==6.0.3
     # via
     #   -r requirements.in
     #   pre-commit
+tomli==2.5.0
+    # via
+    #   coverage
+    #   pytest
 typing-extensions==4.15.0
     # via
+    #   exceptiongroup
     #   flexcache
     #   flexparser
     #   pint
-virtualenv==21.5.1
+    #   virtualenv
+virtualenv==21.7.13
     # via pre-commit
